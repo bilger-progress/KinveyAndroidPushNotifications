@@ -12,6 +12,5 @@ public class GCMReceiver extends WakefulBroadcastReceiver {
     public void onReceive(Context context, Intent intent) {
         ComponentName comp = new ComponentName(context.getPackageName(), com.example.yahov.kinveyandroidpushnotifications.GCMService.class.getName());
         startWakefulService(context, (intent.setComponent(comp)));
-        setResultCode(Activity.RESULT_OK);
     }
 }
