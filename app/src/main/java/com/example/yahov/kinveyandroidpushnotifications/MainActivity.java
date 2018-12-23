@@ -90,6 +90,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void KinveyPushRegister () {
-        Toast.makeText(getApplicationContext(), "Woah!", Toast.LENGTH_LONG).show();
+        kinveyClient.push(GCMService.class).initialize(getApplication());
     }
 }
