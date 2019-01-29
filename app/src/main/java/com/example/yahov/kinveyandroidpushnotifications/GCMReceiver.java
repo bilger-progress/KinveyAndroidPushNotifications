@@ -12,6 +12,6 @@ public class GCMReceiver extends WakefulBroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
         ComponentName comp = new ComponentName(context.getPackageName(), GCMService.class.getName());
-        KinveyGCMService.enqueueWork(context, (intent.setComponent(comp)), KinveyGCMService.class);
+        GCMService.enqueueWork(context, (intent.setComponent(comp)), GCMService.class);
     }
 }
