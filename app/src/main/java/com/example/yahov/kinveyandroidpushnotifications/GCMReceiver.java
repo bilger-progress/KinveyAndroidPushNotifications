@@ -1,6 +1,5 @@
 package com.example.yahov.kinveyandroidpushnotifications;
 
-import android.app.Activity;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
@@ -10,7 +9,7 @@ public class GCMReceiver extends WakefulBroadcastReceiver {
 
     @Override
     public void onReceive(Context context, Intent intent) {
-        ComponentName comp = new ComponentName(context.getPackageName(), com.example.yahov.kinveyandroidpushnotifications.GCMService.class.getName());
-        startWakefulService(context, (intent.setComponent(comp)));
+        ComponentName comp = new ComponentName(context.getPackageName(), GCMService.class.getName());
+        GCMService.enqueueWork(context, (intent.setComponent(comp)), GCMService.class);
     }
 }
